@@ -1,21 +1,7 @@
 import Route from '@ioc:Adonis/Core/Route'
 
-Route.get('/users', async () => {
-  return { hello: 'users' }
-})
-
-Route.get('/users/:id', async () => {
-  return { hello: 'users' }
-})
-
-Route.post('/users', async () => {
-  return { hello: 'users' }
-})
-
-Route.put('/users/:id', async () => {
-  return { hello: 'users' }
-})
-
-Route.delete('/users/:id', async () => {
-  return { hello: 'users' }
-})
+Route.get('users', 'UserController.all')
+Route.get('users/:id', 'UserController.one')
+Route.post('users', 'UserController.save')
+Route.put('users/:id', 'UserController.update')
+Route.delete('users/:id', 'UserController.remove')
